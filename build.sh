@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t alpine:base .
+docker build --build-arg NAME_USER=$USER -t alpine:base .

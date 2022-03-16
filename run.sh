@@ -1,6 +1,6 @@
 #!/bin/bash
 nameContainer="alpine"
-nameUser="dr"
+nameUser=$USER
 docker stop $nameContainer
 docker rm $nameContainer
 echo $(pwd) $nameContainer

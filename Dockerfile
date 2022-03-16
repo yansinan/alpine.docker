@@ -43,10 +43,14 @@ RUN rm -rf /var/cache/apk/*
 
 
 #用户：
-ENV NAME_USER dr
+ARG NAME_USER=dr
+# ENV NAME_USER dr
 RUN addgroup -S $NAME_USER && adduser -S $NAME_USER -G $NAME_USER
 USER $NAME_USER
 WORKDIR /home/$NAME_USER
+
+#添加bash_profile
+RUN echo "" > .bashrc 
 
 # 设置权限
 # RUN chmod 777 /home/node/bin/*
